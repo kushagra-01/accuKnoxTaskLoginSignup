@@ -93,3 +93,18 @@ Testing Libraries/Approaches Considered:
 1. Jest: Jest is a popular JavaScript testing framework that provides a simple and intuitive API for writing unit tests. It has good support for assertions, mocking, and code coverage analysis.
 
 2. Cypress: Cypress is a modern JavaScript end-to-end testing framework that focuses on providing a great developer experience. It offers a rich set of features for writing E2E tests, including automatic waiting, real-time reloading, and built
+
+
+
+
+
+
+A library that I used
+
+   "bcryptjs": for Hashing
+    "dotenv":  to store secrets key 
+    "express":  for routing
+    "express-validator": "^7.0.1",
+    "moongose": to interact with database
+    "nodemailer": for sending mail,
+    "nodemon": to run server continuos
