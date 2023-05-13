@@ -83,7 +83,7 @@ const verify = async (req, res) => {
           return res.status(500).send({ message: err });
 
         }
-        return res.send('registered');
+        return res.send('registered Now can login');
       });
     })
     .catch((e) => console.log("error", e));
@@ -100,7 +100,7 @@ const login = async (req, res, next) => {
     const match = user.check(req.body.password);
     if (!match) return res.send("wrong password!");
     const token = newToken(user);
-    return res.send({ token });
+    return res.send({"Login Success": token });
   } catch (err) {
     return res.status(500).send(err.message);
   }
