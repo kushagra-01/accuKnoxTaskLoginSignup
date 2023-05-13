@@ -97,7 +97,6 @@ A library that I used
    "bcryptjs": for Hashing
     "dotenv":  to store secrets key 
     "express":  for routing
-    "express-validator": "^7.0.1",
     "moongose": to interact with database
     "nodemailer": for sending mail,
     "nodemon": to run server continuos
