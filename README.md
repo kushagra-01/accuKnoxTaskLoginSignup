@@ -100,3 +100,18 @@ A library that I used
     "moongose": to interact with database
     "nodemailer": for sending mail,
     "nodemon": to run server continuos
+
+
+
+    Example of Database
+
+    a.) Hashed Password is saving
+    -------------------------------------------------
+_id:645f22dfc1c6e3870506fb54
+email:"asvv@gmail.com"
+password:"$2a$08$mOVtu.GIWblRPcT1imdk6.jdFFxZNOqN7sV8Dr3Y1Bo6i4tcB92t2"
+confirmationCode:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpudWxsLCJpYXQiOjE2ODM5N…"
+status:"Pending"
+createdAt:2023-05-13T05:40:47.748+00:00
+updatedAt:2023-05-13T05:40:47.748+00:00
+
