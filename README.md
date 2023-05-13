@@ -2,40 +2,31 @@
 Detailed Technical Specifications:
 installation Command
 1. npm install
-2. npm start
-
-
-
+2. https://ethereal.email/ => click on create Ethereal account => copy the Nodemailer configuration      exact in "./src/controllers/auth.controller.js" from line no 18 to 25
+3. you can see emails by clicking the open mailbox or message section
+4. npm start
 
 
 
 Api's Description
 
 1. http://localhost:5000/register
-
 a. It is for registration 
 b. body requirements-: 
        {
             "email":"a@gmail.com",
             "password":"t7drrredd75"
         }
-
 2. http://localhost:5000/verify:token
 a. After registration email must be verified.
 
-
 3. http://localhost:5000/login
-
 a. For Login 
 b. body requirements-: 
        {
             "email":"a@gmail.com",
             "password":"t7drrredd75"
         }
-
-
-
-
 
 
 Summary: 
