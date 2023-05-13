@@ -4,6 +4,7 @@ installation Command
 1. npm install
 2. https://ethereal.email/ => click on create Ethereal account => copy the Nodemailer configuration      exact in "./src/controllers/auth.controller.js" from line no 18 to 25
 3. you can see emails by clicking the open mailbox or message section
+4. Install MongoDB in local create an account
 4. npm start
 
 
