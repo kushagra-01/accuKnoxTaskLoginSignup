@@ -13,12 +13,14 @@ const newToken = (user) => {
 
 // Its a free smtp ethereal email which provides free id on One click
 // https://ethereal.email/
+
+
 const transporter = nodemailer.createTransport({
   host: 'smtp.ethereal.email',
   port: 587,
   auth: {
-      user: 'elza32@ethereal.email',
-      pass: '7x64DdNGtjVMYkkrHm'
+      user: 'zachary.fisher@ethereal.email',
+      pass: 'qTYvs7kqJUepQqQe58'
   }
 });
 
@@ -32,17 +34,21 @@ const register = async (req, res, next) => {
     let user = await User.findOne({ email: email });
     if (user) return res.send("user already exist");
 
-
+    const token = newToken(user);
 
     // if email is not registered it will create new registration
-    user = await User.create(req.body);
-    const token = newToken(user);
+    user = await User.create({
+      email: req.body.email,
+      password: req.body.password,
+      confirmationCode: token
+    });
+   
 
 
     // for totp registration it will send mail
 
     transporter.sendMail({
-      from: email,
+      from:'zachary.fisher@ethereal.email',
       to: email,
       subject: 'Email Verification',
       html: `<h1>Email Confirmation</h1>
@@ -64,7 +70,7 @@ const register = async (req, res, next) => {
 // verification
 const verify = async (req, res) => {
   User.findOne({
-    confirmationCode: req.params.confirmationCode,
+    confirmationCode: req.params.token,
   })
     .then((user) => {
       if (!user) {
@@ -88,8 +94,9 @@ const verify = async (req, res) => {
 const login = async (req, res, next) => {
   try {
     let user = await User.findOne({ email: req.body.email });
-    if (user.status == 'Pending') return res.status(404).send("Email is not registered");
     if (!user) return res.status(404).send("User not found!");
+    if (user.status == 'Pending') return res.status(404).send("Email is not registered");
+
     const match = user.check(req.body.password);
     if (!match) return res.send("wrong password!");
     const token = newToken(user);
